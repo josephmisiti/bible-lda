@@ -13,4 +13,4 @@ build: bible.txt
 	
 nlp: 
 	#python clean-bible.py
-	python lda.py -f bible-clean.txt -k 10 --alpha=0.5 --beta=0.5 -i 5
+	python lda.py -f bible-clean.txt -k 10 --alpha=0.5 --beta=0.5 -i 25
