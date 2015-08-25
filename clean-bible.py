@@ -4,13 +4,16 @@ import re
 from nltk.corpus import stopwords
 
 STOP_WORDS = stopwords.words('english')
+REG = re.compile(r"([A-Za-z]+)")
 
 def clean_bible(file='bible.txt'):
     cleaned_bible_txt = ""
     lines_processed = 0
     lines = open(file).readlines()
     for line in lines[0:]:
-        cleaned_line = " ".join([w.strip().lower() for w in line.split() if w.strip() not in STOP_WORDS])
+        cleaned_line = " ".join([w.strip().lower() for w in REG.findall(line) \
+            if (w.strip() not in STOP_WORDS) and 
+            (len(w) > 3) ])
         cleaned_bible_txt += " {}".format(cleaned_line)
         lines_processed += 1
         
