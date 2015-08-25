@@ -1,3 +1,4 @@
+bible_word2vec.model.syn0.npy
 bible_word2vec.model
 .DS*
 *.pyc
